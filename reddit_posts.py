@@ -44,7 +44,7 @@ image_metadata = {}
 # extract the images from the posts
 for subreddit_name in all_subreddits:
     print(subreddit_name)
-    Path(os.path.join("subreddits", subreddit_name)).mkdir(parents=True, exist_ok=True)
+    Path(os.path.join("subreddits_2", subreddit_name)).mkdir(parents=True, exist_ok=True)
 
     # credit: https://www.reddit.com/r/learnpython/comments/5benxs/how_do_i_download_an_image_using_praw/
     subreddit_instance = reddit.subreddit(subreddit_name)
@@ -62,7 +62,7 @@ for subreddit_name in all_subreddits:
 
             image_metadata[file_name] = {"url": post.url, "post_id": str(post)}
 
-            image_filename = os.path.join("subreddits", subreddit_name, file_name)
+            image_filename = os.path.join("subreddits_2", subreddit_name, file_name)
             if not os.path.isfile(image_filename):
                 r = requests.get(url)
                 with open(image_filename, "wb") as f:
