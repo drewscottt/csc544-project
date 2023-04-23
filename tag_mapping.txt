@@ -1,31 +1,31 @@
 PREEXISTING TAGS:
 
+not_data -> not data
 no_names -> missing value labels
-not_tempo_adjusted -> missing normalization
+not_rate_adjusted -> missing normalization
 misrepresentation -> non sequitor
 small_sample -> too few data points
+clutch_argument -> too few data points
 no_title -> missing title
 no_axis_labels -> missing axis title
-3d -> 3d
 unlabelled -> missing units
+3d -> 3d
 weird_barchart -> inappropriate use of bar chart
+piechart -> inappropriate use of pie chart
 color_map -> ineffective color scheme
-incorrect_line_graph -> inappropriate use of line chart
-double plotting -> inappropriate use of accumulation
 inverted_axis -> inverted axis
 small_text -> illegible text
-arbitrary_formula -> dubious data
 oversimplification -> invalid comparison
-clutch_argument -> too few data points
+era_comparison -> invalid comparison
 arbitrary_cutoff -> selective data
 arbitrary_grouping -> inconsistent grouping
 busy -> cluttering
 overplotting -> overplotting
-piechart -> inappropriate use of pie chart
 logo_plotting -> overplotting
-era_comparison -> invalid comparison
 missing_legend -> missing lengend
+trendline -> trendline on random data
 stats_combination -> inappropriate use of accumulation
+double plotting -> inappropriate use of accumulation
 
 NEW TAGS:
 
@@ -34,6 +34,8 @@ misleading_meme -> meme
 cbb_barchart -> meme
 incorrect_title -> poor title
 no_timeframe -> poor title
-unexplained_formula -> unknown metric
+unexplained_formula -> contrived metric
+arbitrary_formula -> contrived metric
 no_marks -> missing marks
 conflation -> variable conflation
+incorrect_area_chart -> inappropriate use of area chart

@@ -22,6 +22,6 @@ In order to run ```python3 reddit_posts.py``` to collect the data, you will have
 
 ### Stats
 
-* 4,917 images were collected across all of the subreddits (3,883 unique ones).
+* 3,883 images were collected across all of the subreddits.
 * Then, 468 images were selected during the filter stage as being data visualizations in nature.
-* Then, these 130 of these images were being tagged as potentially misleading in nature under 34 categories.
+* Then, these 135 of these images were being tagged as potentially misleading in nature under 35 categories.
