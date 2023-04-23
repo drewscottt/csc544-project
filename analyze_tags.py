@@ -46,9 +46,9 @@ def make_aggregated_tags():
         record_dict["image_name"] = image_name
         for tag in all_tags:
             if tag in tags:
-                record_dict[tag] = True
+                record_dict[tag] = 1
             else:
-                record_dict[tag] = False
+                record_dict[tag] = 0
         flattened_dict.append(record_dict)
 
     df = pd.DataFrame(flattened_dict)
@@ -61,6 +61,8 @@ def do_analysis():
         raw_tags_df = pd.read_csv(f)
         raw_tags_df.pop("Unnamed: 0")
 
+    print(raw_tags_df.loc[raw_tags_df["none"] == 0].shape)
+
     # aggregate the total number of each tag
     raw_tags_df.loc["total"] = raw_tags_df.sum(numeric_only=True)
     print("TAG COUNTS:")
@@ -68,19 +70,19 @@ def do_analysis():
     print("\n")
 
     # get the subreddits of each image
-    if not os.path.isfile("merged_metadata.csv"):
+    if not os.path.isfile("subreddit_metadata.csv"):
         image_metadata_df = pd.read_json("image_metadata.json").transpose()
         image_metadata_df["image_name"] = image_metadata_df.index
-        merged_metadata_df = pd.merge(raw_tags_df, image_metadata_df, on="image_name", how="left")
+        merged_metadata_df = pd.merge(raw_tags_df[["image_name"]], image_metadata_df, on="image_name", how="left")
         merged_metadata_df["subreddit_name"] = merged_metadata_df["post_id"].map(get_subreddit)
-        merged_metadata_df.to_csv("merged_metadata.csv")
+        merged_metadata_df.to_csv("subreddit_metadata.csv")
 
-    merged_metadata_df = pd.read_csv("merged_metadata.csv")
-    merged_metadata_df.pop("Unnamed: 0")
+    subreddit_metadata_df = pd.read_csv("subreddit_metadata.csv")
+    subreddit_metadata_df.pop("Unnamed: 0")
+    merged_metadata_df = pd.merge(subreddit_metadata_df, raw_tags_df, on="image_name", how="left")
 
     # aggregate number of posts per subreddit
     groupedby_subreddit_df = merged_metadata_df.drop(["image_name", "url", "post_id"], axis=1)
-    groupedby_subreddit_df = groupedby_subreddit_df.replace({"False": 0, "True": 1})
     groupedby_subreddit_df = groupedby_subreddit_df.groupby("subreddit_name").sum()
     columns_no_none = list(groupedby_subreddit_df.columns)
     columns_no_none.remove("none")
@@ -92,7 +94,6 @@ def do_analysis():
     print(groupedby_subreddit_df)
     print("\n")
     groupedby_subreddit_df.to_csv("subreddits_analysis.csv")
-
 
 def get_subreddit(post_id):
     print(post_id)

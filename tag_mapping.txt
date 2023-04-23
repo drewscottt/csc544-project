@@ -1,0 +1,39 @@
+PREEXISTING TAGS:
+
+no_names -> missing value labels
+not_tempo_adjusted -> missing normalization
+misrepresentation -> non sequitor
+small_sample -> too few data points
+no_title -> missing title
+no_axis_labels -> missing axis title
+3d -> 3d
+unlabelled -> missing units
+weird_barchart -> inappropriate use of bar chart
+color_map -> ineffective color scheme
+incorrect_line_graph -> inappropriate use of line chart
+double plotting -> inappropriate use of accumulation
+inverted_axis -> inverted axis
+small_text -> illegible text
+arbitrary_formula -> dubious data
+oversimplification -> invalid comparison
+clutch_argument -> too few data points
+arbitrary_cutoff -> selective data
+arbitrary_grouping -> inconsistent grouping
+busy -> cluttering
+overplotting -> overplotting
+piechart -> inappropriate use of pie chart
+logo_plotting -> overplotting
+era_comparison -> invalid comparison
+missing_legend -> missing lengend
+stats_combination -> inappropriate use of accumulation
+
+NEW TAGS:
+
+animation -> animation
+misleading_meme -> meme
+cbb_barchart -> meme
+incorrect_title -> poor title
+no_timeframe -> poor title
+unexplained_formula -> unknown metric
+no_marks -> missing marks
+conflation -> variable conflation
