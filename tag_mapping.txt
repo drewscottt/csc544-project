@@ -26,16 +26,17 @@ missing_legend -> missing lengend
 trendline -> trendline on random data
 stats_combination -> inappropriate use of accumulation
 double plotting -> inappropriate use of accumulation
+overusing_colors -> overusing colors
+incorrect_title -> misleading title
+no_timeframe -> misleading title
 
 NEW TAGS:
 
-animation -> animation
+animation -> animation (perception/visual illusion)
 misleading_meme -> meme
 cbb_barchart -> meme
-incorrect_title -> poor title
-no_timeframe -> poor title
-unexplained_formula -> contrived metric
+unexplained_formula -> contrived metric (input/lie with statistics)
 arbitrary_formula -> contrived metric
-no_marks -> missing marks
-conflation -> variable conflation
-incorrect_area_chart -> inappropriate use of area chart
+no_marks -> missing marks (plotting/incomplete chart)
+conflation -> variable conflation (interpretation/false linkage)
+incorrect_area_chart -> inappropriate use of area chart (visualization design/choice of chart)
